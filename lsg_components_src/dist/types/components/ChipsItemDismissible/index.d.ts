@@ -1,0 +1,1 @@
+export { ChipsItemDismissible } from "./ChipsItemDismissible";

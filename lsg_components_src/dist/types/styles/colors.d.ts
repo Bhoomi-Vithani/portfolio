@@ -1,0 +1,450 @@
+declare const Colors: {
+    colNeutral0: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colNeutral1: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colNeutral2: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colNeutral3: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colNeutral4: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colNeutral5: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colNeutral6: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colNeutral7: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colNeutral8: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colBrandPrimary1: {
+        brand: string;
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+    };
+    colBrandPrimary1Hover: {
+        brand: string;
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+    };
+    colBrandPrimary1Inscription: {
+        brand: string;
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+    };
+    colBrandPrimary1HoverInscription: {
+        brand: string;
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+    };
+    colBackground: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colContentPrimary: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colBackgroundHover: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colSeparatorLine: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colFineLine: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colTextPrimary: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colTextSupplementary: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colTextHighlight: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colActionPrimary: {
+        dark: string;
+        elevatedDark: string;
+        contrastDark: string;
+        light: string;
+        medium: string;
+        hover: string;
+        contrastLight: string;
+        brand: string;
+    };
+    colActionPrimaryHover: {
+        dark: string;
+        elevatedDark: string;
+        contrastDark: string;
+        light: string;
+        medium: string;
+        hover: string;
+        contrastLight: string;
+        brand: string;
+    };
+    colActionSecondary: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colActionSecondaryHover: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colActionTertiary: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colActionTertiaryHover: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colActionInactive: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colActionOutlineInactive: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colActionKeyboardFocus: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colSuccess: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colSuccessInscription: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colWarning: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colWarningInscription: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colError: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colErrorInscription: {
+        light: string;
+        dark: string;
+        medium: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    colFooterBackground: string;
+    shadow01: {
+        light: string;
+        medium: string;
+        dark: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    shadow02: {
+        light: string;
+        medium: string;
+        dark: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    shadow03: {
+        light: string;
+        medium: string;
+        dark: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    shadowCard: {
+        light: string;
+        medium: string;
+        dark: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    shadowCardHover: {
+        light: string;
+        medium: string;
+        dark: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    shadowCardActive: {
+        light: string;
+        medium: string;
+        dark: string;
+        hover: string;
+        elevatedDark: string;
+        contrastLight: string;
+        contrastDark: string;
+        brand: string;
+    };
+    secondaryAccent1Inscription: string;
+    secondaryAccent2Inscription: string;
+    secondaryAccent3Inscription: string;
+    secondaryAccent4Inscription: string;
+    secondaryAccent5Inscription: string;
+    secondaryAccent6Inscription: string;
+    secondaryAccent1: string;
+    secondaryAccent2: string;
+    secondaryAccent3: string;
+    secondaryAccent4: string;
+    secondaryAccent5: string;
+    secondaryAccent6: string;
+    darkAccent: string;
+    black: string;
+    white: string;
+};
+declare const SupportedColors: {
+    secondaryAccent1: string;
+    secondaryAccent2: string;
+    secondaryAccent3: string;
+    secondaryAccent4: string;
+    secondaryAccent5: string;
+    secondaryAccent6: string;
+    darkAccent: string;
+    black: string;
+    white: string;
+};
+export { Colors, SupportedColors };

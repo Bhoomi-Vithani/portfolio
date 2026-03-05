@@ -1,0 +1,14 @@
+import styleInject from 'style-inject';
+import { collectStyles } from '@lsg/ssr';
+
+const reactStyles = " .lsgs-a12e7--snackbar{display:block;border-radius:16px;width:calc(100% - 32px);margin:0 16px;position:fixed;left:0;z-index:1348;overflow:hidden;} .lsgs-a12e7--snackbar__with-heading .lsgs-a12e7--message-container{padding:16px;}@media screen and (min-width:40rem){ .lsgs-a12e7--snackbar{left:auto;right:0;width:auto;min-width:480px;max-width:608px;} .lsgs-a12e7--snackbar__with-heading .lsgs-a12e7--message-container{padding:16px 24px;} .lsgs-a12e7--snackbar.lsgs-a12e7--snackbar__centered{left:50%;transform:translateX(-50%);width:75vw;min-width:480px;max-width:888px;}}@media screen and (min-width:64rem){ .lsgs-a12e7--snackbar{max-width:720px;}}.lsgs-a12e7--snackbar__unmounted{display:none;}@media (forced-colors:active){.lsgs-a12e7--snackbar .lsgs-a12e7--message-container{border:4px Highlight solid;border-radius:18px;}} .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.28);}.lsg-a12e7---theme__medium .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.28);}.lsg-a12e7---theme__hover .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.28);}.lsg-a12e7---theme__dark .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.56);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__hover .lsgs-a12e7--snackbar,.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.56);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__elevated .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.28);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__hover .lsgs-a12e7--snackbar,.lsg-a12e7---theme__contrast .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.28);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsg-a12e7---theme__hover .lsgs-a12e7--snackbar,.lsg-a12e7---theme__dark .lsg-a12e7---theme__contrast .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.56);}.lsg-a12e7---theme__brand .lsgs-a12e7--snackbar,.lsg-a12e7---theme__dark .lsg-a12e7---theme__brand .lsgs-a12e7--snackbar{box-shadow:0 16px 24px -8px rgba(0,37,48,0.28);}@media screen and (prefers-reduced-motion:no-preference){ .lsgs-a12e7--snackbar{transition:bottom 300ms;transition-timing-function:ease-in-out;}}";
+const hostClass = "lsgs-a12e7--snackbar";
+if (styleInject.hasOwnProperty("default")) {
+    styleInject["default"](reactStyles);
+}
+else {
+    styleInject(reactStyles);
+}
+collectStyles(reactStyles);
+
+export { hostClass, reactStyles };

@@ -1,0 +1,3 @@
+export declare const reactStyles = " .lsgs-a12e7--date-picker{display:block;} .lsgs-a12e7--date-picker:not(.lsgs-a12e7--no-margin){margin-bottom:16px;}@media screen and (min-width:64rem){ .lsgs-a12e7--date-picker:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}}@media screen and (min-width:428px){ .lsgs-a12e7--date-picker{position:relative;}}.lsgs-a12e7--date-picker-chip{display:inline-block;}";
+export declare const stencilStyles = ":host{display:block;}:host:not(.lsgs-a12e7--no-margin){margin-bottom:16px;}@media screen and (min-width:64rem){:host:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}}@media screen and (min-width:428px){:host{position:relative;}}.lsgs-a12e7--date-picker-chip{display:inline-block;}";
+export declare const hostClass = "lsgs-a12e7--date-picker";

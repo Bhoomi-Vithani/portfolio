@@ -1,0 +1,1 @@
+export { FooterMetabar } from "./FooterMetabar";

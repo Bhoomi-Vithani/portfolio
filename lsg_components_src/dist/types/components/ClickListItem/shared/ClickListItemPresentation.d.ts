@@ -1,0 +1,43 @@
+import type { IIcon } from "@lsg/icons";
+import React, { ReactNode, JSX } from "react";
+import { IActionBaseProps } from "../../Action/shared/ActionPresentation";
+export interface IClickListItemPresentationProps extends Omit<IActionBaseProps, "hasTabIndex"> {
+    headline: string;
+    headlineAs?: string;
+    subline?: string;
+    sublineAs?: string;
+    statusColor?: "inactive" | "success" | "warning" | "error" | "neutral";
+    statusTag?: string;
+    thumbIcon?: IIcon;
+    statusIndicatorIcon?: IIcon;
+    thumbIconName?: string;
+    thumbIconVariant?: "outline" | "solid";
+    thumbIconTitle?: string;
+    thumbText?: string;
+    thumbImgSrc?: string;
+    linkIcon?: IIcon;
+    showLinkLabel?: boolean;
+    linkLabel?: string;
+    disabled?: boolean;
+    onClick: (e: MouseEvent | React.MouseEvent, name: string) => void;
+    href?: string;
+    look?: "checkbox" | "radio" | "multiaction" | "default";
+    value?: boolean;
+    onChange?: (value: boolean, name: string, event: React.SyntheticEvent<HTMLInputElement>) => void;
+    invalid?: boolean;
+    badgeText?: string;
+    badgeIcon?: IIcon;
+    badgeIconVariant?: "solid" | "outline";
+    badgeScreenReaderLabel?: string;
+    actionAs?: any;
+    actionProps?: any;
+    badgeColor?: "primary" | "highlight" | "supplementary" | "error" | "success" | "alert";
+    actions?: ReactNode;
+    as?: string;
+    loading?: boolean;
+}
+export declare const defaultProps: Partial<IActionBaseProps> | Partial<IClickListItemPresentationProps>;
+export declare const ClickListItemPresentation: {
+    ({ id, name, className, disabled, onClick, noMargin, href, actionRef, hasMouseHover, onMouseHoverChange, hasKeyboardFocus, onKeyboardFocusChange, showLinkLabel, linkIcon, linkLabel, thumbImgSrc, thumbText, thumbIcon, thumbIconVariant, thumbIconName, thumbIconTitle, headline, headlineAs, subline, sublineAs, statusColor, statusTag, statusIndicatorIcon, look, value, onChange, badgeText, badgeScreenReaderLabel, badgeIcon, badgeIconVariant, badgeColor, actions, invalid, as, loading, loadingAriaLabel, htmlAttrs, ...otherProps }: IClickListItemPresentationProps): JSX.Element;
+    displayName: string;
+};

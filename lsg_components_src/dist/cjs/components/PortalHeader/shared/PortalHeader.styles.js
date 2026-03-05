@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = " .lsgs-a12e7--portal-header{display:block;}.lsgs-a12e7--portal-header-flyout-close{margin:0 auto;padding:0 16px;position:relative;max-width:105rem;}.lsgs-a12e7--portal-header-flyout-close-link{position:absolute;top:16px;right:16px;}.lsgs-a12e7--portal-header-top-right{display:flex;align-items:center;}.lsgs-a12e7--portal-header-whole-menu-container{display:flex;overflow:hidden;margin-top:-8px;padding-top:8px;}.lsgs-a12e7--portal-header-whole-menu-container{max-width:480px;width:200%;}@media screen and (min-width:40rem){.lsgs-a12e7--portal-header-whole-menu-container{max-width:none;}}@media screen and (min-width:64rem){.lsgs-a12e7--portal-header-whole-menu-container{max-width:1004px;}}@media screen and (min-width:74.75rem){.lsgs-a12e7--portal-header-whole-menu-container{max-width:1004px;}}@media screen and (min-width:105rem){.lsgs-a12e7--portal-header-whole-menu-container{max-width:1004px;}}.lsgs-a12e7--portal-header-menu-mobile{width:100%;padding-left:16px;height:100%;}.lsgs-a12e7--portal-header-top-menu-mobile{transform:translateX(0%);}.lsgs-a12e7--portal-header-sub-menu-mobile{transform:translateX(100%);}.lsgs-a12e7--portal-header-top-menu-mobile-left{transform:translateX(-100%);}.lsgs-a12e7--portal-header-sub-menu-mobile-left{transform:translateX(-100%);}@media screen and (prefers-reduced-motion:no-preference){.lsgs-a12e7--portal-header-top-menu-mobile{transition:transform 250ms ease-in-out;}.lsgs-a12e7--portal-header-sub-menu-mobile{transition:transform 250ms ease-in-out;}.lsgs-a12e7--portal-header-top-menu-mobile-left{transition:transform 250ms ease-in-out;}.lsgs-a12e7--portal-header-sub-menu-mobile-left{transition:transform 250ms ease-in-out;}}";
+const hostClass = "lsgs-a12e7--portal-header";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.hostClass = hostClass;
+exports.reactStyles = reactStyles;

@@ -1,0 +1,80 @@
+export declare const depotRecordsSchema: {
+    id: number;
+    num_rows: number;
+    file_format: string;
+    name: string;
+    array: boolean;
+    columns: ({
+        name: string;
+        null_percentage: number;
+        type: string;
+        formula: any;
+        format?: undefined;
+        min?: undefined;
+        max?: undefined;
+        decimals?: undefined;
+        values?: undefined;
+        selectionStyle?: undefined;
+        distribution?: undefined;
+    } | {
+        name: string;
+        null_percentage: number;
+        type: string;
+        format: string;
+        formula: any;
+        min?: undefined;
+        max?: undefined;
+        decimals?: undefined;
+        values?: undefined;
+        selectionStyle?: undefined;
+        distribution?: undefined;
+    } | {
+        name: string;
+        null_percentage: number;
+        type: string;
+        min: number;
+        max: number;
+        decimals: number;
+        formula: any;
+        format?: undefined;
+        values?: undefined;
+        selectionStyle?: undefined;
+        distribution?: undefined;
+    } | {
+        name: string;
+        null_percentage: number;
+        type: string;
+        values: string[];
+        selectionStyle: string;
+        distribution: any;
+        formula: any;
+        format?: undefined;
+        min?: undefined;
+        max?: undefined;
+        decimals?: undefined;
+    } | {
+        name: string;
+        null_percentage: number;
+        type: string;
+        min: string;
+        max: string;
+        format: string;
+        formula: any;
+        decimals?: undefined;
+        values?: undefined;
+        selectionStyle?: undefined;
+        distribution?: undefined;
+    })[];
+};
+export declare const depotRecords: {
+    id: string;
+    wertpapier: string;
+    wkn: string;
+    isin: string;
+    bestand: number;
+    kurs: number;
+    handelsplatz: string;
+    deltaeinstiegskurs: number;
+    kaufdatum: string;
+    wertpapiertyp: string;
+}[];

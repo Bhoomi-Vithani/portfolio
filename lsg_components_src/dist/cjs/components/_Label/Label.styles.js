@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = "label.lsgs-a12e7--label,.lsgs-a12e7--label{display:block;cursor:pointer;}.lsgs-a12e7--label.lsgs-a12e7--label__disabled{cursor:not-allowed;}label.lsgs-a12e7--label__inline,.lsgs-a12e7--label__inline{display:inline-block;}.lsgs-a12e7--label-input{opacity:0;height:0;width:0;position:absolute;}.lsgs-a12e7--label__overlay::after{content:\"\";position:absolute;top:0;right:0;bottom:0;left:0;}.lsgs-a12e7--label__loading{position:relative;}.lsgs-a12e7--label__loading .lsgs-a12e7--label-inner{visibility:hidden;}.lsgs-a12e7--label-spinner{display:flex;align-items:center;justify-content:center;position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;}.lsgs-a12e7--data-table .lsgs-a12e7--data-table-tr-label-column-label.lsgs-a12e7--label .lsgs-a12e7--label-inner > *:last-child{margin-bottom:0;}";
+const mainClass = "lsgs-a12e7--label";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.mainClass = mainClass;
+exports.reactStyles = reactStyles;

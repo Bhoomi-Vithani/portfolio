@@ -1,0 +1,14 @@
+import styleInject from 'style-inject';
+import { collectStyles } from '@lsg/ssr';
+
+const reactStyles = " .lsgs-a12e7--teaser-group{display:flex;flex-wrap:wrap;list-style:none;margin:0;padding:0;} .lsgs-a12e7--teaser-group:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}@media screen and (min-width:64rem){ .lsgs-a12e7--teaser-group:not(.lsgs-a12e7--no-margin){margin-bottom:32px;}}@media screen and (min-width:40rem){ .lsgs-a12e7--teaser-group{gap:24px;} .lsgs-a12e7--teaser-group .lsgs-a12e7--teaser{height:100%;width:calc(50% - 12px);}}@media screen and (min-width:64rem){ .lsgs-a12e7--teaser-group{gap:32px;} .lsgs-a12e7--teaser-group .lsgs-a12e7--teaser{height:100%;width:calc(33.333% - (2 * 32px / 3));}} .lsgs-a12e7--teaser-group.lsgs-a12e7--teaser-group-focus-topic .lsgs-a12e7--teaser:first-child{width:100%;}@media screen and (min-width:64rem){ .lsgs-a12e7--teaser-group.lsgs-a12e7--teaser-group-focus-topic .lsgs-a12e7--teaser:first-child{margin-bottom:0px;}}";
+const hostClass = "lsgs-a12e7--teaser-group";
+if (styleInject.hasOwnProperty("default")) {
+    styleInject["default"](reactStyles);
+}
+else {
+    styleInject(reactStyles);
+}
+collectStyles(reactStyles);
+
+export { hostClass, reactStyles };

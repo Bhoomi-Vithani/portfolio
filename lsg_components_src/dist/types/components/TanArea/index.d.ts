@@ -1,0 +1,1 @@
+export { TanArea } from "./TanArea";

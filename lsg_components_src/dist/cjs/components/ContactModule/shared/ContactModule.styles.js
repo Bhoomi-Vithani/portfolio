@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = " .lsgs-a12e7--contact-module{display:flex;flex-flow:column wrap;justify-content:center;-moz-column-gap:32px;column-gap:32px;row-gap:28px;align-items:center;border-radius:16px;padding:40px 16px;}@media screen and (min-width:40rem){ .lsgs-a12e7--contact-module{padding:40px 60px;}}@media screen and (min-width:64rem){ .lsgs-a12e7--contact-module{flex-flow:row nowrap;justify-content:space-between;padding:48px 60px;}}.lsgs-a12e7--contact-module-toparea{flex:1 1 auto;margin-right:0;}@media screen and (max-width:63.99875rem){.lsgs-a12e7--contact-module-toparea{text-align:center;}}@media screen and (min-width:64rem){.lsgs-a12e7--contact-module-toparea .lsgs-a12e7--contact-module-headline{text-align:left;}}.lsgs-a12e7--contact-module-toparea .lsgs-a12e7--contact-module-phonenumber-container{display:flex;align-items:center;}.lsgs-a12e7--contact-module-toparea .lsgs-a12e7--contact-module-phonenumber{margin-left:12px;margin-right:0;}.lsgs-a12e7--footer  .lsgs-a12e7--contact-module,.lsgs-a12e7--simple-footer  .lsgs-a12e7--contact-module{margin-top:-64px;} .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-light,#002E3C);}.lsg-a12e7---theme__medium .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-medium,#002E3C);}.lsg-a12e7---theme__hover .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-elevated-light,#002530);}.lsg-a12e7---theme__dark .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-dark,#DBE2E5);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__hover .lsgs-a12e7--contact-module,.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-elevated-dark,#E9EDF0);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__elevated .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-light,#002E3C);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__hover .lsgs-a12e7--contact-module,.lsg-a12e7---theme__contrast .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-contrast-light,#002530);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsg-a12e7---theme__hover .lsgs-a12e7--contact-module,.lsg-a12e7---theme__dark .lsg-a12e7---theme__contrast .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-contrast-dark,#FFFFFF);}.lsg-a12e7---theme__brand .lsgs-a12e7--contact-module,.lsg-a12e7---theme__dark .lsg-a12e7---theme__brand .lsgs-a12e7--contact-module{color:var(--lsg-color-col-text-primary-brand,#002530);}";
+const hostClass = "lsgs-a12e7--contact-module";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.hostClass = hostClass;
+exports.reactStyles = reactStyles;

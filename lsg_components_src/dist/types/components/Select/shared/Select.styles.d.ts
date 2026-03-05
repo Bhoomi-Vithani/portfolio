@@ -1,0 +1,3 @@
+export declare const reactStyles = " .lsgs-a12e7--select{display:block;margin-bottom:32px;}.lsgs-a12e7--select__dense{margin-bottom:24px;}.lsgs-a12e7--no-margin{margin-bottom:0;}.lsgs-a12e7--hidden{display:none;}.lsgs-a12e7--select-chip{display:inline-block;}.lsgs-a12e7--select-chip.lsgs-a12e7--select-hidden{display:none;}";
+export declare const stencilStyles = ":host{display:block;margin-bottom:32px;}.lsgs-a12e7--select__dense{margin-bottom:24px;}.lsgs-a12e7--no-margin{margin-bottom:0;}.lsgs-a12e7--hidden{display:none;}.lsgs-a12e7--select-chip{display:inline-block;}.lsgs-a12e7--select-chip.lsgs-a12e7--select-hidden{display:none;}";
+export declare const hostClass = "lsgs-a12e7--select";

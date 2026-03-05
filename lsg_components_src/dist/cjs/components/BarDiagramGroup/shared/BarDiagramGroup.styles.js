@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = " .lsgs-a12e7--bar-diagram-group{display:flex;} .lsgs-a12e7--bar-diagram-group:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}@media screen and (min-width:64rem){ .lsgs-a12e7--bar-diagram-group:not(.lsgs-a12e7--no-margin){margin-bottom:32px;}}.lsgs-a12e7--bar-diagram-group-bars-direction__vertical{flex-direction:column;width:100%;}.lsgs-a12e7--bar-diagram-group-bars-direction__horizontal{flex-direction:row;flex-wrap:wrap;gap:32px;}.lsgs-a12e7--bar-diagram-group-description__hidden{border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}@supports not (clip-path:inset(100%)){.lsgs-a12e7--bar-diagram-group-description__hidden{clip:rect(0 0 0 0);}}@supports (clip-path:inset(100%)){.lsgs-a12e7--bar-diagram-group-description__hidden{clip-path:inset(100%);}}";
+const hostClass = "lsgs-a12e7--bar-diagram-group";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.hostClass = hostClass;
+exports.reactStyles = reactStyles;

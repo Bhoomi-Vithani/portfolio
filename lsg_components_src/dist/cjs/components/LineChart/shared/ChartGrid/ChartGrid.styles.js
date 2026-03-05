@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = ".lsgs-a12e7--chart-grid-line__dashed{stroke-dasharray:5,5;}.lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-light,#002E3C);stroke-width:2px;}.lsg-a12e7---theme__medium .lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsg-a12e7---theme__medium .lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-medium,#002E3C);stroke-width:2px;}.lsg-a12e7---theme__hover .lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsg-a12e7---theme__hover .lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-elevated-light,#002530);stroke-width:2px;}.lsg-a12e7---theme__dark .lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsg-a12e7---theme__dark .lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-dark,#DBE2E5);stroke-width:2px;}.lsg-a12e7---theme__dark .lsg-a12e7---theme__hover .lsgs-a12e7--chart-grid-line,.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsg-a12e7---theme__dark .lsg-a12e7---theme__hover .lsgs-a12e7--chart-grid-line__bold,.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-elevated-dark,#E9EDF0);stroke-width:2px;}.lsg-a12e7---theme__medium .lsg-a12e7---theme__elevated .lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsg-a12e7---theme__medium .lsg-a12e7---theme__elevated .lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-light,#002E3C);stroke-width:2px;}.lsg-a12e7---theme__medium .lsg-a12e7---theme__hover .lsgs-a12e7--chart-grid-line,.lsg-a12e7---theme__contrast .lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsg-a12e7---theme__medium .lsg-a12e7---theme__hover .lsgs-a12e7--chart-grid-line__bold,.lsg-a12e7---theme__contrast .lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-contrast-light,#002530);stroke-width:2px;}.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsg-a12e7---theme__hover .lsgs-a12e7--chart-grid-line,.lsg-a12e7---theme__dark .lsg-a12e7---theme__contrast .lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsg-a12e7---theme__hover .lsgs-a12e7--chart-grid-line__bold,.lsg-a12e7---theme__dark .lsg-a12e7---theme__contrast .lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-contrast-dark,#FFFFFF);stroke-width:2px;}.lsg-a12e7---theme__brand .lsgs-a12e7--chart-grid-line,.lsg-a12e7---theme__dark .lsg-a12e7---theme__brand .lsgs-a12e7--chart-grid-line{stroke:#D5E1E2;stroke-width:2px;}.lsg-a12e7---theme__brand .lsgs-a12e7--chart-grid-line__bold,.lsg-a12e7---theme__dark .lsg-a12e7---theme__brand .lsgs-a12e7--chart-grid-line__bold{stroke:var(--lsg-color-col-content-primary-brand,#002530);stroke-width:2px;}";
+const hostClass = "lsgs-a12e7--chart-grid";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.hostClass = hostClass;
+exports.reactStyles = reactStyles;

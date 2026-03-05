@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = " .lsgs-a12e7--cards{display:block;} .lsgs-a12e7--cards:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}@media screen and (min-width:64rem){ .lsgs-a12e7--cards:not(.lsgs-a12e7--no-margin){margin-bottom:32px;}}.lsgs-a12e7--cards-ul{list-style:none;margin:0;padding:0;}.lsgs-a12e7--cards-fieldset{padding:0;border:0;overflow:visible;}.lsgs-a12e7--cards-fieldset > legend{position:absolute;clip:rect(0 0 0 0);}";
+const hostClass = "lsgs-a12e7--cards";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.hostClass = hostClass;
+exports.reactStyles = reactStyles;

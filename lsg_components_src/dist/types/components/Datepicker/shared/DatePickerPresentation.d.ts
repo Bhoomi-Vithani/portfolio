@@ -1,0 +1,52 @@
+import React, { ReactNode } from "react";
+import { IBasicPropsInternal } from "../../../utils/IBasicPropsInternal";
+import { ChipsItemActionHandle } from "../../ChipsItemAction/shared/ChipsItemActionPresentation";
+export interface IDatePickerPresentationProps extends IBasicPropsInternal {
+    value: string | Date;
+    onChange?: (value: string | Date, name: string, event: React.SyntheticEvent<HTMLElement>) => void;
+    onBlur?: (event: React.FocusEvent<HTMLElement>, name: string) => void;
+    onFocus?: (event: React.FocusEvent<HTMLElement>, name: string) => void;
+    onIconClick?: (event: React.MouseEvent<HTMLElement>, name: string) => void;
+    placeholder?: string;
+    label: string;
+    name?: string;
+    errorText?: ReactNode;
+    helperText?: ReactNode;
+    invalid?: boolean;
+    readOnly?: boolean;
+    optional?: boolean;
+    optionalText?: string;
+    disabled?: boolean;
+    clearIcon?: boolean;
+    htmlAttrs?: React.InputHTMLAttributes<HTMLInputElement> | Record<`data-${string}`, string | number | boolean>;
+    inputRef?: React.MutableRefObject<ChipsItemActionHandle | HTMLElement>;
+    containerRef?: any;
+    containerElement?: HTMLElement;
+    minDate?: Date;
+    maxDate?: Date;
+    dateFormat?: "day" | "month";
+    datepickerFormat?: "day" | "month";
+    disabledDates?: Date[];
+    weekendsDisabled?: boolean;
+    selectableDates?: Date[];
+    chipVariant?: boolean;
+    chipSelected?: boolean;
+    /** If ChipItemAction has an active selection, the selection has to be removable. */
+    chipResetFilter?: () => void;
+    inputElement?: HTMLElement | ChipsItemActionHandle;
+    noYearPicker?: boolean;
+    spacing?: "default" | "dense";
+    flyoutRef?: any;
+    open: boolean;
+    onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
+    onInputClick?: () => void;
+    onOpenChange: (open?: boolean) => void;
+    hostRef?: any;
+    handleOnBlur?: (event: React.FocusEvent<HTMLElement>) => void;
+    errorTextAriaLive?: boolean;
+    today?: Date;
+}
+export declare const DatePickerPresentation: {
+    ({ id: idProp, className, noMargin, name, value, label, open, disabled, clearIcon, errorText, helperText, invalid, optional, optionalText, placeholder, readOnly, onFocus, onChange, inputRef, containerRef, containerElement, htmlAttrs, flyoutRef, hostRef, isStencilHost, minDate, maxDate, dateFormat, datepickerFormat, disabledDates, weekendsDisabled, selectableDates, chipVariant, chipSelected, chipResetFilter, onKeyDown, onOpenChange, handleOnBlur, noYearPicker, errorTextAriaLive, spacing, today, }: IDatePickerPresentationProps): React.JSX.Element;
+    displayName: string;
+};

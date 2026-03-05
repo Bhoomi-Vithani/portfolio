@@ -1,0 +1,63 @@
+import { IIcon } from "@lsg/icons";
+import React, { ComponentType, ReactNode } from "react";
+import { IBasicPropsInternal } from "../../../utils/IBasicPropsInternal";
+export interface ITextFieldSharedProps extends IBasicPropsInternal {
+    hostId?: string;
+    value?: string;
+    name?: string;
+    hasWidget?: boolean;
+    invalid?: boolean;
+    readonly?: boolean;
+    disabled?: boolean;
+    optional?: boolean | string;
+    spacing?: "default" | "dense";
+    as?: "input" | "textarea" | ComponentType<any>;
+    errorText?: ReactNode;
+    errorTextAriaLive?: boolean;
+    label: string;
+    optionalText?: string;
+    placeholder?: string;
+    onFocus?: (ev: React.FocusEvent<HTMLElement>, name: string) => void;
+    onBlur?: (ev: React.FocusEvent<HTMLElement>, name: string) => void;
+    onChange?: (value: string, name: string, ev: React.SyntheticEvent<HTMLElement>) => void;
+    onClear?: (ev: React.SyntheticEvent<HTMLElement>) => void;
+    onKeyDown?: (ev: React.KeyboardEvent<HTMLElement>) => void;
+    clearIcon?: boolean;
+    selectOpen?: "open" | "closed";
+    hiddenSelectIcon?: boolean;
+    iconLink?: ReactNode;
+    iconName?: string;
+    icon?: IIcon;
+    iconFocusable?: boolean;
+    iconText?: string;
+    iconExpanded?: boolean;
+    iconHtmlAttrs?: React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement> | React.InputHTMLAttributes<HTMLInputElement>;
+    helperText?: ReactNode;
+    onInputClick?: (ev: React.MouseEvent<HTMLElement>, name: string) => void;
+    onClearIconClick?: (event: React.MouseEvent<HTMLElement>, name: string) => void;
+    onIconClick?: (event: React.MouseEvent<HTMLElement>, name: string) => void;
+    htmlAttrs?: React.InputHTMLAttributes<HTMLInputElement> | React.TextareaHTMLAttributes<HTMLTextAreaElement> | React.ButtonHTMLAttributes<HTMLButtonElement>;
+    inputRef?: any;
+    iconRef?: any;
+    suffix?: string;
+    suffixType?: "inline" | "separated";
+    isSearchField?: boolean;
+    type?: "text" | "button" | "password";
+    labelRef?: any;
+}
+export interface ITextFieldPresentationProps extends ITextFieldSharedProps {
+    hasKeyboardFocus?: boolean;
+    hasFocus?: boolean;
+    hasHover?: boolean;
+    inputElement?: HTMLElement;
+    onMouseHoverChange?: (newHover: boolean) => void;
+    isPasswordVisible?: boolean;
+    onPasswordToggle?: (e: React.KeyboardEvent<HTMLElement> | React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => void;
+    containerRef?: any;
+    innerContainerRef?: any;
+    suffixRef?: any;
+}
+export declare const TextFieldPresentation: {
+    (props: ITextFieldPresentationProps): React.JSX.Element;
+    displayName: string;
+};

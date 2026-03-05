@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = ".lsgs-a12e7--action-group{list-style:none;margin:0;padding:0;display:flex;flex-flow:nowrap column;row-gap:16px;-moz-column-gap:32px;column-gap:32px;}.lsgs-a12e7--action-group:not(.lsgs-a12e7--no-margin){margin-bottom:16px;}@media screen and (min-width:64rem){.lsgs-a12e7--action-group:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}}@media screen and (min-width:40rem){.lsgs-a12e7--action-group{flex-flow:wrap row-reverse;}}.lsgs-a12e7--action-group-item{align-content:center;display:block;min-height:48px;}@media screen and (min-width:74.75rem){.lsgs-a12e7--action-group-item{min-height:56px;}}.lsgs-a12e7--action-group-item::after{content:\"\";display:block;margin-top:32px;margin-bottom:-32px;height:0;}";
+const hostClass = "lsgs-a12e7--action-group";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.hostClass = hostClass;
+exports.reactStyles = reactStyles;

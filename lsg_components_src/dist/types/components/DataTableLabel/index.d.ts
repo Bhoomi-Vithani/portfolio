@@ -1,0 +1,1 @@
+export { DataTableLabel } from "./DataTableLabel";

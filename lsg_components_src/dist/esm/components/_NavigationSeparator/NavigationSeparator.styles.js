@@ -1,0 +1,14 @@
+import styleInject from 'style-inject';
+import { collectStyles } from '@lsg/ssr';
+
+const reactStyles = " .lsgs-a12e7--navigation-separator{display:block;margin:24px 0;} .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-light,#CED8DA);}.lsg-a12e7---theme__medium .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-medium,#C3CAC8);}.lsg-a12e7---theme__hover .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-elevated-light,#ABBAC0);}.lsg-a12e7---theme__dark .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-dark,#1D4856);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__hover .lsgs-a12e7--navigation-separator,.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-elevated-dark,#305764);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__elevated .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-light,#CED8DA);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__hover .lsgs-a12e7--navigation-separator,.lsg-a12e7---theme__contrast .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-contrast-light,#778F8D);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsg-a12e7---theme__hover .lsgs-a12e7--navigation-separator,.lsg-a12e7---theme__dark .lsg-a12e7---theme__contrast .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-contrast-dark,#5E7B83);}.lsg-a12e7---theme__brand .lsgs-a12e7--navigation-separator,.lsg-a12e7---theme__dark .lsg-a12e7---theme__brand .lsgs-a12e7--navigation-separator{border-bottom:1px solid var(--lsg-color-col-fine-line-brand,#ABBAC0);}";
+const hostClass = "lsgs-a12e7--navigation-separator";
+if (styleInject.hasOwnProperty("default")) {
+    styleInject["default"](reactStyles);
+}
+else {
+    styleInject(reactStyles);
+}
+collectStyles(reactStyles);
+
+export { hostClass, reactStyles };

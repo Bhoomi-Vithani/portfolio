@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = " .lsgs-a12e7--footer{display:block;background:var(--lsg-color-footer-background,#002E3C);padding:0 28px;}.lsgs-a12e7--footer__contact-area-outlier{margin:0 -28px;}.lsgs-a12e7--footer-inner,.lsgs-a12e7--footer-contact-area{margin:0 auto;max-width:30rem;}@media screen and (min-width:40rem){.lsgs-a12e7--footer-inner,.lsgs-a12e7--footer-contact-area{max-width:48rem;}}@media screen and (min-width:64rem){.lsgs-a12e7--footer-inner,.lsgs-a12e7--footer-contact-area{max-width:64rem;}}@media screen and (min-width:74.75rem){.lsgs-a12e7--footer-inner,.lsgs-a12e7--footer-contact-area{max-width:90rem;}}@media screen and (min-width:105rem){.lsgs-a12e7--footer-inner,.lsgs-a12e7--footer-contact-area{max-width:90rem;}}@media screen and (min-width:74.75rem){.lsgs-a12e7--footer-inner,.lsgs-a12e7--footer-contact-area{width:calc(86% + 56px);}}.lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-light,#ffffff);}.lsg-a12e7---theme__medium .lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-medium,#F1EFED);}.lsg-a12e7---theme__hover .lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-elevated-light,#ECEFF2);}.lsg-a12e7---theme__dark .lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-dark,#002E3C);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__hover .lsgs-a12e7--footer__contact-area-outlier,.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-elevated-dark,#103D4B);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__elevated .lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-light,#ffffff);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__hover .lsgs-a12e7--footer__contact-area-outlier,.lsg-a12e7---theme__contrast .lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-contrast-light,#E0E0DD);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsg-a12e7---theme__hover .lsgs-a12e7--footer__contact-area-outlier,.lsg-a12e7---theme__dark .lsg-a12e7---theme__contrast .lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-contrast-dark,#1D4856);}.lsg-a12e7---theme__brand .lsgs-a12e7--footer__contact-area-outlier,.lsg-a12e7---theme__dark .lsg-a12e7---theme__brand .lsgs-a12e7--footer__contact-area-outlier{border-top:64px solid var(--lsg-color-col-background-brand,#FFD700);}";
+const hostClass = "lsgs-a12e7--footer";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.hostClass = hostClass;
+exports.reactStyles = reactStyles;

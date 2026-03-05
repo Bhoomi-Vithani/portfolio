@@ -1,0 +1,3 @@
+export declare const reactStyles = " .lsgs-a12e7--table-action-menu{width:-moz-max-content;width:max-content;margin-left:auto;display:flex;flex-direction:row;-moz-column-gap:12px;column-gap:12px;}";
+export declare const stencilStyles = ":host{width:-moz-max-content;width:max-content;margin-left:auto;display:flex;flex-direction:row;-moz-column-gap:12px;column-gap:12px;}";
+export declare const hostClass = "lsgs-a12e7--table-action-menu";

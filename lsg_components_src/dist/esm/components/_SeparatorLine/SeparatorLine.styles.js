@@ -1,0 +1,14 @@
+import styleInject from 'style-inject';
+import { collectStyles } from '@lsg/ssr';
+
+const reactStyles = " .lsgs-a12e7--separator-line{display:block;width:100%;} .lsgs-a12e7--separator-line::after{content:\"\";display:block;width:100%;border-bottom-width:1px;border-bottom-style:solid;} .lsgs-a12e7--separator-line.lsgs-a12e7---centered-layout::after{width:66.666%;margin:0 auto;} .lsgs-a12e7--separator-line.lsgs-a12e7---spacing-small::after{margin-top:16px;margin-bottom:16px;} .lsgs-a12e7--separator-line.lsgs-a12e7---spacing-medium::after{margin-top:24px;margin-bottom:24px;} .lsgs-a12e7--separator-line.lsgs-a12e7---spacing-large::after{margin-top:32px;margin-bottom:32px;} .lsgs-a12e7--separator-line.lsgs-a12e7---spacing-none::after{margin-top:0px;margin-bottom:0px;} .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-light,#CED8DA);}.lsg-a12e7---theme__medium .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-medium,#C3CAC8);}.lsg-a12e7---theme__hover .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-elevated-light,#ABBAC0);}.lsg-a12e7---theme__dark .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-dark,#1D4856);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__hover .lsgs-a12e7--separator-line::after,.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-elevated-dark,#305764);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__elevated .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-light,#CED8DA);}.lsg-a12e7---theme__medium .lsg-a12e7---theme__hover .lsgs-a12e7--separator-line::after,.lsg-a12e7---theme__contrast .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-contrast-light,#778F8D);}.lsg-a12e7---theme__dark .lsg-a12e7---theme__elevated .lsg-a12e7---theme__hover .lsgs-a12e7--separator-line::after,.lsg-a12e7---theme__dark .lsg-a12e7---theme__contrast .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-contrast-dark,#5E7B83);}.lsg-a12e7---theme__brand .lsgs-a12e7--separator-line::after,.lsg-a12e7---theme__dark .lsg-a12e7---theme__brand .lsgs-a12e7--separator-line::after{border-bottom-color:var(--lsg-color-col-fine-line-brand,#ABBAC0);}";
+const hostClass = "lsgs-a12e7--separator-line";
+if (styleInject.hasOwnProperty("default")) {
+    styleInject["default"](reactStyles);
+}
+else {
+    styleInject(reactStyles);
+}
+collectStyles(reactStyles);
+
+export { hostClass, reactStyles };

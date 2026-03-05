@@ -1,0 +1,16 @@
+'use strict';
+
+var styleInject = require('style-inject');
+var ssr = require('@lsg/ssr');
+
+const reactStyles = " .lsgs-a12e7--button{display:flex;width:100%;}@media screen and (min-width:40rem){ .lsgs-a12e7--button{width:-moz-fit-content;width:fit-content;}} .lsgs-a12e7--button:not(.lsgs-a12e7--no-margin){margin-bottom:16px;}@media screen and (min-width:64rem){ .lsgs-a12e7--button:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}}.lsgs-a12e7--button-group .lsgs-a12e7--button:not(.lsgs-a12e7--no-margin){margin-bottom:0px;}@media screen and (min-width:64rem){.lsgs-a12e7--button-group .lsgs-a12e7--button:not(.lsgs-a12e7--no-margin){margin-bottom:0px;}}.lsgs-a12e7--button__reduced-width-mobile{width:-moz-fit-content;width:fit-content;}.lsgs-a12e7--button-inner{margin:0 auto;display:flex;justify-content:center;align-items:center;font-size:0.8125rem;line-height:calc(0.8125rem + 7px);letter-spacing:0.1px;font-family:var(--lsg-font-family-500,\"Gotham\",sans-serif);font-weight:var(--lsg-font-weight-500,500);max-width:25rem;height:48px;white-space:nowrap;padding-left:24px;padding-right:24px;min-width:88px;}.lsgs-a12e7--button-inner >.lsgs-a12e7--icon{margin:0;}.lsgs-a12e7--button-inner-icon__left{flex-wrap:nowrap;flex-direction:row;}.lsgs-a12e7--button-inner-icon__left >.lsgs-a12e7--icon{margin-right:12px;}.lsgs-a12e7--button-inner-icon__right{flex-wrap:nowrap;flex-direction:row-reverse;}.lsgs-a12e7--button-inner-icon__right >.lsgs-a12e7--icon{margin-left:12px;}@media screen and (min-width:64rem){.lsgs-a12e7--button-inner{font-size:0.9375rem;line-height:calc(0.9375rem + 9px);letter-spacing:0.1px;font-family:var(--lsg-font-family-500,\"Gotham\",sans-serif);font-weight:var(--lsg-font-weight-500,500);max-width:48rem;}}@media screen and (min-width:74.75rem){.lsgs-a12e7--button-inner{padding-left:32px;padding-right:32px;min-width:72px;height:56px;}.lsgs-a12e7--button-inner-icon__left{padding-left:28px;}.lsgs-a12e7--button-inner-icon__right{padding-right:28px;}}.lsgs-a12e7--button-label__notext{border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}@supports not (clip-path:inset(100%)){.lsgs-a12e7--button-label__notext{clip:rect(0 0 0 0);}}@supports (clip-path:inset(100%)){.lsgs-a12e7--button-label__notext{clip-path:inset(100%);}}";
+const hostClass = "lsgs-a12e7--button";
+if (styleInject.hasOwnProperty("default")) {
+  styleInject["default"](reactStyles);
+} else {
+  styleInject(reactStyles);
+}
+ssr.collectStyles(reactStyles);
+
+exports.hostClass = hostClass;
+exports.reactStyles = reactStyles;

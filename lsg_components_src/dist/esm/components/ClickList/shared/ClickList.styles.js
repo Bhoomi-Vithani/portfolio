@@ -1,0 +1,14 @@
+import styleInject from 'style-inject';
+import { collectStyles } from '@lsg/ssr';
+
+const reactStyles = " .lsgs-a12e7--click-list{display:block;margin:0;} .lsgs-a12e7--click-list:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}@media screen and (min-width:64rem){ .lsgs-a12e7--click-list:not(.lsgs-a12e7--no-margin){margin-bottom:32px;}}.lsgs-a12e7--click-list-ul{list-style:none;margin:0;padding:0;}.lsgs-a12e7--click-list-ul > *:hover{z-index:20;} .lsgs-a12e7--click-list.lsgs-a12e7--click-list__align-left{margin-right:auto;} .lsgs-a12e7--click-list.lsgs-a12e7--click-list__align-center{margin-left:auto;margin-right:auto;} .lsgs-a12e7--click-list.lsgs-a12e7--click-list__align-right{margin-left:auto;}.lsgs-a12e7--click-list-headline{margin-left:4px;}.lsgs-a12e7--click-list-errorText{margin-top:20px;}";
+const hostClass = "lsgs-a12e7--click-list";
+if (styleInject.hasOwnProperty("default")) {
+    styleInject["default"](reactStyles);
+}
+else {
+    styleInject(reactStyles);
+}
+collectStyles(reactStyles);
+
+export { hostClass, reactStyles };

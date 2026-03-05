@@ -1,0 +1,3 @@
+export declare const reactStyles = " .lsgs-a12e7--accordion-group{display:block;margin-top:0;margin-bottom:0;} .lsgs-a12e7--accordion-group:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}@media screen and (min-width:64rem){ .lsgs-a12e7--accordion-group:not(.lsgs-a12e7--no-margin){margin-bottom:32px;}}";
+export declare const stencilStyles = ":host{display:block;margin-top:0;margin-bottom:0;}:host:not(.lsgs-a12e7--no-margin){margin-bottom:24px;}@media screen and (min-width:64rem){:host:not(.lsgs-a12e7--no-margin){margin-bottom:32px;}}";
+export declare const hostClass = "lsgs-a12e7--accordion-group";

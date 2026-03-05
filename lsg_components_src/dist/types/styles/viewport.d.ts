@@ -1,0 +1,27 @@
+export type viewports = "xxl" | "xl" | "lg" | "md" | "sm" | "xs";
+type directions = "min" | "max" | "exact";
+export declare const breakPoints: {
+    xxl: number;
+    xl: number;
+    lg: number;
+    md: number;
+    sm: number;
+    xs: number;
+};
+export declare function styleViewport(viewport: viewports, direction: directions, content: string): string;
+export declare const styleViewportSmMin: (content: string) => string;
+export declare const styleViewportMdMin: (content: string) => string;
+export declare const styleViewportLgMin: (content: string) => string;
+export declare const styleViewportXlMin: (content: string) => string;
+export declare const styleViewportXxlMin: (content: string) => string;
+export declare const styleViewportXsExact: (content: string) => string;
+export declare function getViewportMediaQueryRange(minViewport: viewports, maxViewport: viewports): string;
+export declare function styleViewportRange(minViewport: viewports, maxViewport: viewports, content: any): string;
+export declare function getViewportMediaQuery(viewport: viewports, direction: directions): string;
+export declare const getViewportMediaQuerySmMin: () => string;
+export declare const getViewportMediaQueryMdMin: () => string;
+export declare const getViewportMediaQueryLgMin: () => string;
+export declare const getViewportMediaQueryXlMin: () => string;
+export declare const getViewportMediaQueryXxlMin: () => string;
+export declare const getViewportMediaQueryXsExact: () => string;
+export {};
