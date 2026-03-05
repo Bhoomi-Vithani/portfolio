@@ -206,34 +206,38 @@ const App = () => {
                     <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: '20px', marginTop: '30px' }}>
                         <Card>
                             <CardContent>
-                                <div style={{ display: 'flex', gap: '5px', marginBottom: '10px' }}>
-                                    <Tag label="Gen-AI" color="primary" />
-                                    <Tag label="Design Thinking" color="secondary" />
-                                </div>
-                                <Headline size="h4" as="h3">Kitchen.AI Component</Headline>
-                                <Paragraph size="helper-text" style={{ marginBottom: '10px' }}>Digital Innovation Project MVP</Paragraph>
-                                <Paragraph>
-                                    Developed a web application for intelligent food management based on a Tabularaza (zeb consulting) workshop. Focused on user-centric design, sustainability, and AI-driven process optimization.
-                                </Paragraph>
-                                <div style={{ marginTop: '15px' }}>
-                                    <a href="https://preview--smartkuche-eco-eats-99.lovable.app/" target="_blank" rel="noopener noreferrer" className="cb-card-link">View MVP <ArrowRight /></a>
+                                <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                    <div style={{ display: 'flex', gap: '5px', marginBottom: '10px' }}>
+                                        <Tag label="Gen-AI" color="primary" />
+                                        <Tag label="Design Thinking" color="secondary" />
+                                    </div>
+                                    <Headline size="h4" as="h3">Kitchen.AI Component</Headline>
+                                    <Paragraph size="helper-text" style={{ marginBottom: '10px' }}>Digital Innovation Project MVP</Paragraph>
+                                    <Paragraph>
+                                        Developed a web application for intelligent food management based on a Tabularaza (zeb consulting) workshop. Focused on user-centric design, sustainability, and AI-driven process optimization.
+                                    </Paragraph>
+                                    <div style={{ marginTop: 'auto', paddingTop: '15px' }}>
+                                        <a href="https://preview--smartkuche-eco-eats-99.lovable.app/" target="_blank" rel="noopener noreferrer" className="cb-card-link">View MVP <ArrowRight /></a>
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>
 
                         <Card>
                             <CardContent>
-                                <div style={{ display: 'flex', gap: '5px', marginBottom: '10px', flexWrap: 'wrap' }}>
-                                    <Tag label="n8n Automation" color="brand" />
-                                    <Tag label="Agile" color="secondary" />
-                                </div>
-                                <Headline size="h4" as="h3">AI Workflow System</Headline>
-                                <Paragraph size="helper-text" style={{ marginBottom: '10px' }}>AI & Operation Decisions</Paragraph>
-                                <Paragraph>
-                                    Built an automated n8n workflow to optimize order tracking and planning. Integrated appointment scheduling and automated shopping list generation (bundling ingredient quantities and volumes) using modern IT architecture.
-                                </Paragraph>
-                                <div style={{ marginTop: '15px' }}>
-                                    <a href="https://drive.google.com/file/d/1GIIZSCJqqiYldc2cxYaznEwQfmTLQ-6j/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="cb-card-link">View Project <ArrowRight /></a>
+                                <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                    <div style={{ display: 'flex', gap: '5px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                                        <Tag label="n8n Automation" color="brand" />
+                                        <Tag label="Agile" color="secondary" />
+                                    </div>
+                                    <Headline size="h4" as="h3">AI Workflow System</Headline>
+                                    <Paragraph size="helper-text" style={{ marginBottom: '10px' }}>AI & Operation Decisions</Paragraph>
+                                    <Paragraph>
+                                        Built an automated n8n workflow to optimize order tracking and planning. Integrated appointment scheduling and automated shopping list generation (bundling ingredient quantities and volumes) using modern IT architecture.
+                                    </Paragraph>
+                                    <div style={{ marginTop: 'auto', paddingTop: '15px' }}>
+                                        <a href="https://drive.google.com/file/d/1GIIZSCJqqiYldc2cxYaznEwQfmTLQ-6j/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="cb-card-link">View Project <ArrowRight /></a>
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>
@@ -265,23 +269,29 @@ const App = () => {
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
                             <Card>
                                 <CardContent>
-                                    <Headline size="h5" as="h4" style={{ marginBottom: '5px' }}>Masters in Management</Headline>
-                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold' }}>Frankfurt School of Finance and Management</Paragraph>
-                                    <Paragraph>Expected July 2026</Paragraph>
+                                    <Headline size="h5" as="h4" style={{ marginBottom: '8px' }}>Masters in Management</Headline>
+                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold', color: 'var(--lsg-color-grey-80)' }}>Frankfurt School of Finance and Management</Paragraph>
+                                    <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>Expected July 2026</Paragraph>
                                 </CardContent>
                             </Card>
                             <Card>
                                 <CardContent>
-                                    <Headline size="h5" as="h4" style={{ marginBottom: '5px' }}>M.Sc. Advanced Architecture <Tag color="brand" label="Grade 1.8" /></Headline>
-                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold' }}>Frankfurt University of Applied Sciences</Paragraph>
-                                    <Paragraph>2021 - 2023</Paragraph>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
+                                        <Headline size="h5" as="h4" style={{ margin: 0 }}>M.Sc. Advanced Architecture</Headline>
+                                        <span className="cb-grade-badge">Grade 1.8</span>
+                                    </div>
+                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold', color: 'var(--lsg-color-grey-80)' }}>Frankfurt University of Applied Sciences</Paragraph>
+                                    <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>2021 - 2023</Paragraph>
                                 </CardContent>
                             </Card>
                             <Card>
                                 <CardContent>
-                                    <Headline size="h5" as="h4" style={{ marginBottom: '5px' }}>B.Arch Architecture <Tag color="brand" label="Grade 1.9" /></Headline>
-                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold' }}>Gujarat Technological University, India</Paragraph>
-                                    <Paragraph>2015 - 2020</Paragraph>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
+                                        <Headline size="h5" as="h4" style={{ margin: 0 }}>B.Arch Architecture</Headline>
+                                        <span className="cb-grade-badge">Grade 1.9</span>
+                                    </div>
+                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold', color: 'var(--lsg-color-grey-80)' }}>Gujarat Technological University, India</Paragraph>
+                                    <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>2015 - 2020</Paragraph>
                                 </CardContent>
                             </Card>
                         </div>
