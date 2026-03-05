@@ -305,13 +305,23 @@ const App = () => {
                             <Card>
                                 <CardContent>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
-                                        <Headline size="h5" as="h4" style={{ margin: 0 }}>B.Arch Architecture</Headline>
+                                        <Headline size="h5" as="h4" style={{ margin: 0 }}> Bachelor of Architecture </Headline><p></p>
                                         <span className="cb-grade-badge">Grade 1.9</span>
                                     </div>
                                     <Paragraph size="helper-text" style={{ fontWeight: 'bold', color: 'var(--lsg-color-grey-80)' }}>Gujarat Technological University, India</Paragraph>
                                     <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>2015 - 2020</Paragraph>
                                 </CardContent>
                             </Card>
+                            {/* <Card>
+                                <CardContent>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
+                                        <Headline size="h5" as="h4" style={{ margin: 0 }}>B.Arch Architecture</Headline>
+                                        <span className="cb-grade-badge">Grade 1.9</span>
+                                    </div>
+                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold', color: 'var(--lsg-color-grey-80)' }}>Gujarat Technological University, India</Paragraph>
+                                    <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>2015 - 2020</Paragraph>
+                                </CardContent>
+                            </Card> */}
                         </div>
                     </div>
 
