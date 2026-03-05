@@ -105,7 +105,7 @@ const App = () => {
                         <a href="https://www.linkedin.com/in/bhoomi-vithani" target="_blank" rel="noopener noreferrer" className="cb-btn-pill cb-btn-pill--hero-outline">
                             LinkedIn <ArrowRight />
                         </a>
-                        <a href="/Lebenslauf_Bhoomi_Vithani_IDDP.pdf" target="_blank" rel="noopener noreferrer" download="Lebenslauf_Bhoomi_Vithani.pdf" className="cb-btn-pill cb-btn-pill--hero-outline">
+                        <a href={`${import.meta.env.BASE_URL}Lebenslauf_Bhoomi_Vithani_IDDP.pdf`} target="_blank" rel="noopener noreferrer" download="Lebenslauf_Bhoomi_Vithani.pdf" className="cb-btn-pill cb-btn-pill--hero-outline">
                             Download PDF Resume <ArrowRight />
                         </a>
                     </div>

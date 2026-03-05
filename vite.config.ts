@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/portfolio/',
+  base: process.env.GITHUB_PAGES ? '/portfolio/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
