@@ -312,16 +312,6 @@ const App = () => {
                                     <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>2015 - 2020</Paragraph>
                                 </CardContent>
                             </Card>
-                            {/* <Card>
-                                <CardContent>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
-                                        <Headline size="h5" as="h4" style={{ margin: 0 }}>B.Arch Architecture</Headline>
-                                        <span className="cb-grade-badge">Grade 1.9</span>
-                                    </div>
-                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold', color: 'var(--lsg-color-grey-80)' }}>Gujarat Technological University, India</Paragraph>
-                                    <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>2015 - 2020</Paragraph>
-                                </CardContent>
-                            </Card> */}
                         </div>
                     </div>
 
@@ -340,7 +330,7 @@ const App = () => {
                             <Card>
                                 <CardContent>
                                     <Headline size="h5" as="h4" style={{ marginBottom: '10px' }}>Data Preparation with SQL</Headline>
-                                    <Paragraph>Data Preparation & Manipulation, Database Queries, Aggregations</Paragraph>
+                                    <Paragraph>Data Preparation, Data Manipulation, Database Queries, Data Aggregation Functions</Paragraph>
                                     <div style={{ marginTop: '15px' }}>
                                         <a href="https://drive.google.com/file/d/1j3xrsecT8787N6Xp_hpL5qZRMv_UYL0t/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="cb-card-link">View Credential <ArrowRight /></a>
                                     </div>
