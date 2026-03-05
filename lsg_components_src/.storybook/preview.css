@@ -1,0 +1,23 @@
+.lsgsb--needs-additional-theme-class,
+.sb-show-main,
+#storybook-root,
+.sblsg--outer-div {
+    height: 100%;
+    display: flow-root;
+}
+
+.sbdocs-content p:not([class^="lsgs"]),
+.sbdocs-content ul:not([class^="lsgs"]),
+.sbdocs-content ol:not([class^="lsgs"]),
+.sbdocs-content li:not([class^="lsgs"]) {
+    font-size: 16px;
+    max-width: 500px;
+}
+
+.sb-main-centered #storybook-root {
+    min-width: 300px;
+}
+
+.sb-main-padded {
+    padding: 0 !important;
+}

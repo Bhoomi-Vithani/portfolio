@@ -1,0 +1,12 @@
+{
+    "statements": 0,
+    "branches": 0,
+    "functions": 0,
+    "lines": 0,
+    "all": false,
+    "check-coverage": true,
+    "report-dir": "../../coverage",
+    "reporter": ["lcov", "text"],
+    "include": ["src/components/**/*.ts", "src/components/**/*.tsx"],
+    "exclude": ["src/components/**/*.spec.ts", "src/components/**/*.stories.tsx", "src/components/**/index.tsx"]
+}

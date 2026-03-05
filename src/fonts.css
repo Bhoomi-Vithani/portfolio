@@ -1,0 +1,23 @@
+
+/**
+ * Gotham - Monotype (monotype.com - Jan. 2023)
+ */
+
+@font-face {
+    font-family: "Gotham";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/Gotham-400-Book.woff2") format("woff2"), url("/fonts/Gotham-400-Book.woff") format("woff");
+}
+@font-face {
+    font-family: "Gotham";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/fonts/Gotham-500-Medium.woff2") format("woff2"), url("/fonts/Gotham-500-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Gotham";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/Gotham-700-Bold.woff2") format("woff2"), url("/fonts/Gotham-700-Bold.woff") format("woff");
+}

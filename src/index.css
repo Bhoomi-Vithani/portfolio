@@ -1,0 +1,351 @@
+@import './fonts.css';
+
+:root {
+  /* Commerzbank Brand Variables */
+  --lsg-color-brand-default: #002e3c;
+  --lsg-color-brand-hover: #004256;
+  --lsg-color-primary-default: #fdbb00;
+  --lsg-color-primary-hover: #e0a300;
+  --lsg-color-secondary-default: #00768c;
+  --lsg-color-secondary-hover: #005a6b;
+  --lsg-color-tertiary-default: #0077b5;
+  /* LinkedIn Blue */
+
+  --lsg-color-grey-10: #f4f6f9;
+  --lsg-color-grey-20: #e2e6eb;
+  --lsg-color-grey-80: #444444;
+  --lsg-color-grey-90: #222222;
+  --lsg-color-white: #ffffff;
+
+  --lsg-font-family-sans: "Gotham", "Inter", Avenir, Helvetica, Arial, sans-serif;
+  --lsg-font-weight-regular: 400;
+  --lsg-font-weight-medium: 500;
+  --lsg-font-weight-bold: 700;
+
+  /* Missing SVG default colors */
+  --lsg-icon-color: currentColor;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--lsg-font-family-sans) !important;
+  color: var(--lsg-color-grey-90);
+  background-color: var(--lsg-color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--lsg-color-secondary-default);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--lsg-color-secondary-hover);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--lsg-font-family-sans);
+  color: var(--lsg-color-brand-default);
+  margin-top: 0;
+}
+
+/* Premium Component Shims mapping to Commerzbank Theme */
+.cb-card {
+  background: var(--lsg-color-white);
+  border-radius: 16px;
+  border: 1px solid var(--lsg-color-grey-20);
+  padding: 32px;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cb-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 46, 60, 0.08);
+  /* Subtle shadow on hover */
+  border-color: var(--lsg-color-grey-20);
+  /* Keep border same, the shadow does the work */
+}
+
+/* Commerzbank 1:1 Card Link */
+.cb-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lsg-color-brand-default);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.cb-card-link svg {
+  transition: transform 0.3s ease;
+}
+
+.cb-card:hover .cb-card-link svg,
+.cb-card-link:hover svg {
+  transform: translateX(6px);
+}
+
+/* Commerzbank 1:1 Pill Button */
+.cb-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: var(--lsg-color-primary-default);
+  color: var(--lsg-color-brand-default);
+  text-decoration: none;
+  font-family: var(--lsg-font-family-sans);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cb-btn-pill svg {
+  transition: transform 0.3s ease;
+}
+
+.cb-btn-pill:hover {
+  background-color: var(--lsg-color-primary-hover);
+}
+
+.cb-btn-pill:hover svg {
+  transform: translateX(5px);
+}
+
+.cb-btn-pill--outline {
+  background-color: transparent;
+  border: 2px solid var(--lsg-color-brand-default);
+  color: var(--lsg-color-brand-default);
+}
+
+.cb-btn-pill--outline:hover {
+  background-color: var(--lsg-color-brand-default);
+  color: var(--lsg-color-white);
+}
+
+.skills-popup {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%) translateX(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  z-index: 10;
+}
+
+.cb-card:hover .skills-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+.cb-card.has-skills {
+  padding-right: 150px;
+  /* Make room for the popup on desktop */
+}
+
+@media (max-width: 768px) {
+  .cb-card.has-skills {
+    padding-right: 25px;
+    /* Reset on mobile */
+  }
+
+  .skills-popup {
+    position: relative;
+    transform: none;
+    top: auto;
+    right: auto;
+    opacity: 1;
+    visibility: visible;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+}
+
+/* ====== HERO SECTION with Background Image ====== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/hero-bg.png') center center / cover no-repeat;
+  overflow: hidden;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      rgba(0, 46, 60, 0.82) 0%,
+      rgba(0, 46, 60, 0.65) 50%,
+      rgba(0, 46, 60, 0.50) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-title {
+  font-family: var(--lsg-font-family-sans);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+  line-height: 1.15;
+}
+
+.hero-title span {
+  color: var(--lsg-color-primary-default) !important;
+}
+
+.hero-subtitle {
+  font-family: var(--lsg-font-family-sans);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 20px;
+}
+
+.hero-description {
+  font-family: var(--lsg-font-family-sans);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 30px;
+  max-width: 100%;
+}
+
+/* Hero Button Variants (on dark background) */
+.cb-btn-pill--hero {
+  background: var(--lsg-color-primary-default) !important;
+  color: var(--lsg-color-brand-default) !important;
+  border: 2px solid var(--lsg-color-primary-default) !important;
+}
+
+.cb-btn-pill--hero:hover {
+  background: var(--lsg-color-primary-hover) !important;
+  border-color: var(--lsg-color-primary-hover) !important;
+}
+
+.cb-btn-pill--hero-outline {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+.cb-btn-pill--hero-outline:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Scroll Animation */
+@keyframes scroll-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  align-self: center;
+}
+
+.scroll-indicator svg {
+  animation: scroll-bounce 2.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.scroll-indicator:hover {
+  opacity: 0.7;
+}
+
+.cb-tag {
+  background: var(--lsg-color-grey-10);
+  color: var(--lsg-color-brand-default);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin: 4px 6px 4px 0;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--lsg-color-grey-20);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.cb-tag--primary {
+  background: rgba(253, 187, 0, 0.15);
+  color: #a47600;
+  border-color: rgba(253, 187, 0, 0.3);
+}
+
+.cb-tag--secondary {
+  background: rgba(0, 118, 140, 0.1);
+  color: var(--lsg-color-secondary-default);
+  border-color: rgba(0, 118, 140, 0.2);
+}
+
+.cb-tag--brand {
+  background: rgba(0, 46, 60, 0.05);
+  color: var(--lsg-color-brand-default);
+  border-color: rgba(0, 46, 60, 0.15);
+}
+
+/* Ensure missing SVG paths color inherit exactly like LSG components expect */
+svg {
+  fill: currentColor;
+}
