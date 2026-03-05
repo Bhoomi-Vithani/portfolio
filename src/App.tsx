@@ -267,13 +267,31 @@ const App = () => {
                     <div style={{ marginTop: '40px' }}>
                         <Headline size="h4" as="h3" style={{ marginBottom: '20px' }}>Academic Background</Headline>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
-                            <Card>
-                                <CardContent>
-                                    <Headline size="h5" as="h4" style={{ marginBottom: '8px' }}>Masters in Management</Headline>
-                                    <Paragraph size="helper-text" style={{ fontWeight: 'bold', color: 'var(--lsg-color-grey-80)' }}>Frankfurt School of Finance and Management</Paragraph>
-                                    <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>Expected July 2026</Paragraph>
-                                </CardContent>
-                            </Card>
+                            <div style={{ gridColumn: '1 / -1' }}>
+                                <Card>
+                                    <CardContent>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                            <div>
+                                                <Headline size="h5" as="h4" style={{ marginBottom: '8px' }}>Masters in Management</Headline>
+                                                <Paragraph size="helper-text" style={{ fontWeight: 'bold', color: 'var(--lsg-color-grey-80)' }}>Frankfurt School of Finance and Management</Paragraph>
+                                                <Paragraph style={{ color: 'var(--lsg-color-grey-80)' }}>Expected July 2026</Paragraph>
+                                            </div>
+                                            <div>
+                                                <Paragraph size="helper-text" style={{ fontWeight: 'bold', marginBottom: '8px' }}>Related Modules:</Paragraph>
+                                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                                                    <Tag label="Digital Transformation" color="primary" />
+                                                    <Tag label="Digital Innovation" color="secondary" />
+                                                    <Tag label="AI and Operation Decisions" color="brand" />
+                                                    <Tag label="Information Systems" color="primary" />
+                                                    <Tag label="Financial Analysis and Performance Management" color="secondary" />
+                                                    <Tag label="Managerial Data Science" color="brand" />
+                                                    <Tag label="Digital Marketing" color="primary" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </div>
                             <Card>
                                 <CardContent>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
