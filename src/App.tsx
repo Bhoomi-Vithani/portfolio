@@ -126,7 +126,7 @@ const App = () => {
                     <p className="hero-description" style={{ display: 'none' }}>
                         Management graduate exploring the intersection of digital transformation and the financial industry. Through projects in AI, automation, and data-driven decision-making, I have developed a strong foundation in combining innovation with strategic business thinking. Analytical, adaptable, and solution-oriented, I am motivated to drive digital innovation within Commerzbank's International Digital Development Program.
                     </p>
-                    <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', marginTop: '5%' }}>
                         <a href="mailto:bhoomivithani1008@gmail.com" className="cb-btn-pill cb-btn-pill--hero">
                             Email Me <ArrowRight />
                         </a>

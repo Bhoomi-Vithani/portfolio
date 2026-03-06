@@ -32,6 +32,10 @@ const WhyMeSections = () => {
             {/* ====== THE THESIS (The Pivot) ====== */}
             <section id="thesis" className="thesis-section">
                 <div className="thesis-content reveal">
+                    <div className="section-badge-container">
+                        <div className="section-badge-bg"></div>
+                        <h2 className="section-badge-text">Why Me?</h2>
+                    </div>
                     <p className="thesis-text">
                         I work where <span className="highlight">foundations</span> matter, where <span className="highlight">complexity</span> requires sequencing, and where <span className="highlight">innovation</span> must justify itself.
                     </p>
