@@ -15,7 +15,8 @@ import {
     arrow___download,
 } from "@lsg/icons";
 
-import React, { ComponentProps } from "react";
+import React, { type ComponentProps } from "react";
+import WhyMeSections from "./components/WhyMeSections";
 
 const Card = ({ children, className }: { children: React.ReactNode, className?: string }) => <div className={`cb-card ${className || ''}`}>{children}</div>;
 const CardContent = ({ children }: { children: React.ReactNode }) => <div>{children}</div>;
@@ -38,6 +39,7 @@ const App = () => {
 
     const navigationTree: ComponentProps<typeof SimpleHeader>["navigationTree"] = [
         { name: "profile", label: "Profile", href: "#profile" },
+        { name: "why-me", label: "Why Me?", href: "#thesis" },
         { name: "experience", label: "Experience", href: "#experience" },
         { name: "projects", label: "Projects", href: "#projects" },
         { name: "skills", label: "Skills & Education", href: "#skills" },
@@ -48,6 +50,32 @@ const App = () => {
         { label: "Impressum", href: "#", htmlAttrs: { lang: "en" }, name: "impressum" },
         { label: "Data Protection", href: "#", htmlAttrs: { lang: "en" }, name: "protection" },
     ];
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const sections = navigationTree.map((nav: any) => {
+                const id = nav.href?.substring(1);
+                return document.getElementById(id || '');
+            }).filter(Boolean) as HTMLElement[];
+
+            let currentActElementName = "profile";
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                // Check if the section top is above the middle of the viewport
+                if (section.getBoundingClientRect().top <= window.innerHeight / 2) {
+                    currentActElementName = navigationTree[i].name as string;
+                    break;
+                }
+            }
+            setActiveSection(currentActElementName);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        // Initial check on mount
+        handleScroll();
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <div style={{ scrollBehavior: 'smooth' }}>
@@ -64,13 +92,13 @@ const App = () => {
                 }}
                 logoLabel="Commerzbank"
                 logoName="item-logo"
-                onLogoClick={(event) => {
+                onLogoClick={(event: any) => {
                     event.preventDefault();
                     setActiveSection("item-logo");
                     window.scrollTo(0, 0);
                 }}
                 value={activeSection}
-                onChange={(actElementName) => {
+                onChange={(actElementName: any) => {
                     setActiveSection(actElementName);
                     const el = document.getElementById(actElementName);
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -93,9 +121,9 @@ const App = () => {
                         Bhoomi <span style={{ color: 'var(--lsg-color-brand-default)' }}>Vithani</span>
                     </h1>
                     <h2 className="hero-subtitle">
-                        Digital Business, Technology & Operations
+                        Designing structures that endure. Building systems that evolve.
                     </h2>
-                    <p className="hero-description">
+                    <p className="hero-description" style={{ display: 'none' }}>
                         Management graduate exploring the intersection of digital transformation and the financial industry. Through projects in AI, automation, and data-driven decision-making, I have developed a strong foundation in combining innovation with strategic business thinking. Analytical, adaptable, and solution-oriented, I am motivated to drive digital innovation within Commerzbank's International Digital Development Program.
                     </p>
                     <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
@@ -113,12 +141,16 @@ const App = () => {
                     {/* Bouncing Scroll Down Indicator */}
                     <div
                         className="scroll-indicator"
-                        onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => document.getElementById('thesis')?.scrollIntoView({ behavior: 'smooth' })}
                     >
+                        <span style={{ marginBottom: '8px', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Scroll to Explore</span>
                         <ChevronDown />
                     </div>
                 </div>
             </section>
+
+            {/* ====== WHY ME NARRATIVE ====== */}
+            <WhyMeSections />
 
             {/* ====== EXPERIENCE SECTION ====== */}
             <Section id="experience" backgroundColor="grey-10" horizontalAlign="left" verticalPadding="xl">

@@ -1,0 +1,161 @@
+/* ====== WHY ME SECTIONS (NARRATIVE FLOW) ====== */
+
+/* 1. Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal.delay-2 {
+    transition-delay: 0.25s;
+}
+
+.reveal.delay-3 {
+    transition-delay: 0.4s;
+}
+
+/* 2. The Thesis Section */
+.thesis-section {
+    background-color: var(--lsg-color-brand-default);
+    color: var(--lsg-color-white);
+    padding: 100px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.thesis-content {
+    max-width: 900px;
+}
+
+.thesis-text {
+    font-family: var(--lsg-font-family-sans);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-wrap: balance;
+    hyphens: none;
+}
+
+.thesis-text .highlight {
+    color: var(--lsg-color-primary-default);
+    font-weight: 500;
+}
+
+.thesis-keywords {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    color: var(--lsg-color-primary-default);
+    letter-spacing: 1px;
+}
+
+.thesis-conclusion {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 400;
+    color: var(--lsg-color-white);
+    line-height: 1.6;
+}
+
+/* 3. The Three Pillars */
+.pillars-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.cb-card--pillar {
+    height: 100%;
+}
+
+.pillar-header {
+    margin-bottom: 24px;
+}
+
+.pillar-number {
+    display: inline-block;
+    font-family: var(--lsg-font-family-sans);
+    font-weight: 800;
+    font-size: 3rem;
+    color: rgba(0, 46, 60, 0.08);
+    /* Faint brand dark */
+    margin-bottom: -15px;
+    line-height: 1;
+}
+
+/* 4. The Culture Fit */
+.culture-fit-section {
+    background-color: var(--lsg-color-white);
+    padding: 80px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle Commerzbank Yellow branding background pattern/accent */
+.culture-fit-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--lsg-color-primary-default), transparent);
+}
+
+.culture-fit-box {
+    max-width: 800px;
+    background: var(--lsg-color-grey-10);
+    border-left: 6px solid var(--lsg-color-primary-default);
+    padding: 48px;
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.culture-fit-headline {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: var(--lsg-color-brand-default);
+}
+
+.culture-fit-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--lsg-color-grey-80);
+}
+
+@media (max-width: 768px) {
+    .thesis-keywords {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .culture-fit-box {
+        padding: 32px 24px;
+    }
+}
