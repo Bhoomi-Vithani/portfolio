@@ -107,7 +107,7 @@ const App = () => {
                     <>
                         <IconLink icon={social___linkedin} appearance="no-text" href="https://www.linkedin.com/in/bhoomi-vithani" htmlAttrs={{ target: "_blank", rel: "noopener noreferrer" }} label="LinkedIn" />
                         <IconLink icon={communication___envelope} appearance="no-text" href="mailto:bhoomivithani1008@gmail.com" label="Email" />
-                        <IconLink icon={arrow___download} appearance="no-text" href="/Lebenslauf_Bhoomi_Vithani_IDDP.pdf" htmlAttrs={{ download: "Lebenslauf_Bhoomi_Vithani_IDDP.pdf" }} label="Download Resume" />
+                        <IconLink icon={arrow___download} appearance="no-text" href={`${import.meta.env.BASE_URL}Lebenslauf_Bhoomi_Vithani_IDDP.pdf`} htmlAttrs={{ download: "Lebenslauf_Bhoomi_Vithani_IDDP.pdf" }} label="Download Resume" />
                     </>
                 }
                 isSticky={true}
