@@ -52,14 +52,13 @@ const WhyMeSections = () => {
             </section>
 
             {/* ====== THE THREE PILLARS ====== */}
-            <Section id="pillars" backgroundColor="grey-10" horizontalAlign="left" verticalPadding="xl">
+            {/* <Section id="pillars" backgroundColor="grey-10" horizontalAlign="left" verticalPadding="xl">
                 <div className="pillars-container">
                     <div className="reveal">
                         <Headline size="h2" as="h2">The Three Pillars</Headline>
                     </div>
 
                     <div className="pillars-grid">
-                        {/* Pillar 1 */}
                         <div className="cb-card cb-card--pillar reveal delay-1">
                             <div className="pillar-header">
                                 <span className="pillar-number">01</span>
@@ -76,7 +75,6 @@ const WhyMeSections = () => {
                             </Paragraph>
                         </div>
 
-                        {/* Pillar 2 */}
                         <div className="cb-card cb-card--pillar reveal delay-2">
                             <div className="pillar-header">
                                 <span className="pillar-number">02</span>
@@ -93,7 +91,6 @@ const WhyMeSections = () => {
                             </Paragraph>
                         </div>
 
-                        {/* Pillar 3 */}
                         <div className="cb-card cb-card--pillar reveal delay-3">
                             <div className="pillar-header">
                                 <span className="pillar-number">03</span>
@@ -111,7 +108,73 @@ const WhyMeSections = () => {
                         </div>
                     </div>
                 </div>
-            </Section>
+            </Section> */}
+
+            {/* ====== THE THREE PILLARS - NEW ====== */}
+            <section className="pillars-new-section">
+                <div className="pillars-new-content text-center">
+                    <Headline size="h2" as="h2" className="reveal fade-up">The Three Pillars</Headline>
+
+                    <div className="pillars-new-rows">
+                        {/* Pillar 1 */}
+                        <div className="pillar-row reveal delay-1">
+                            <div className="pillar-row-header">
+                                <span className="pillar-row-number">01.</span>
+                                <Headline size="h4" as="h3" className="pillar-row-title">FOUNDATION - PRECISION</Headline>
+                            </div>
+                            <div className="pillar-row-body">
+                                <Paragraph>
+                                    At Commerzbank, I worked within treasury and regulatory data flows - validating EAEG data, reconciling balances, calculating accruals. Not glamorous work. Fundamental work.
+                                </Paragraph>
+                                <Paragraph style={{ marginTop: '12px' }}>
+                                    It reinforced a principle: digital ambition requires structural rigor. When the data layer lacks integrity, innovation cannot scale sustainably.
+                                </Paragraph>
+                                <Paragraph style={{ marginTop: '12px', fontStyle: 'italic', fontWeight: '500' }}>
+                                    That perspective continues to guide me.
+                                </Paragraph>
+                            </div>
+                        </div>
+
+                        {/* Pillar 2 */}
+                        <div className="pillar-row reveal delay-2">
+                            <div className="pillar-row-header">
+                                <span className="pillar-row-number">02.</span>
+                                <Headline size="h4" as="h3" className="pillar-row-title">TRANSFORMATION - STRUCTURE IN MOTION</Headline>
+                            </div>
+                            <div className="pillar-row-body">
+                                <Paragraph>
+                                    Supporting the S/4HANA implementation at DekaBank exposed me to transformation from within. Milestones. Risks. Alignment. Execution.
+                                </Paragraph>
+                                <Paragraph style={{ marginTop: '12px' }}>
+                                    Transformation is rarely dramatic. It is disciplined progression.
+                                </Paragraph>
+                                <Paragraph style={{ marginTop: '12px', fontStyle: 'italic', fontWeight: '500' }}>
+                                    I learned to operate where complexity demands clarity where systems evolve because structure is actively maintained.
+                                </Paragraph>
+                            </div>
+                        </div>
+
+                        {/* Pillar 3 */}
+                        <div className="pillar-row reveal delay-3">
+                            <div className="pillar-row-header">
+                                <span className="pillar-row-number">03.</span>
+                                <Headline size="h4" as="h3" className="pillar-row-title">INNOVATION - JUDGMENT OVER HYPE</Headline>
+                            </div>
+                            <div className="pillar-row-body">
+                                <Paragraph>
+                                    Evaluating 78 AI use cases, developing KPIs, and shaping prototypes required more than curiosity. It required discernment.
+                                </Paragraph>
+                                <Paragraph style={{ marginTop: '12px' }}>
+                                    Not every technological possibility creates value. Impact emerges where judgment meets execution.
+                                </Paragraph>
+                                <Paragraph style={{ marginTop: '12px', fontStyle: 'italic', fontWeight: '500' }}>
+                                    Digital progress is driven by deliberate decisions.
+                                </Paragraph>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* ====== THE CULTURE FIT ====== */}
             <section id="culture-fit" className="culture-fit-section">
