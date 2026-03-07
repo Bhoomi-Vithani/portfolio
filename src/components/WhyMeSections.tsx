@@ -126,7 +126,7 @@ const WhyMeSections = () => {
                                 <Paragraph>
                                     At Commerzbank, I worked within treasury and regulatory data flows - validating EAEG data, reconciling balances, calculating accruals. Not glamorous work. Fundamental work.
                                 </Paragraph>
-                                <Paragraph style={{ marginTop: '12px' }}>
+                                <Paragraph style={{ marginTop: '12px', textWrap: 'pretty' }}>
                                     It reinforced a principle: digital ambition requires structural rigor. When the data layer lacks integrity, innovation cannot scale sustainably.
                                 </Paragraph>
                                 <Paragraph style={{ marginTop: '12px', fontStyle: 'italic', fontWeight: '500' }}>
@@ -164,7 +164,7 @@ const WhyMeSections = () => {
                                 <Paragraph>
                                     Evaluating 78 AI use cases, developing KPIs, and shaping prototypes required more than curiosity. It required discernment.
                                 </Paragraph>
-                                <Paragraph style={{ marginTop: '12px' }}>
+                                <Paragraph style={{ marginTop: '12px', textWrap: 'pretty' }}>
                                     Not every technological possibility creates value. Impact emerges where judgment meets execution.
                                 </Paragraph>
                                 <Paragraph style={{ marginTop: '12px', fontStyle: 'italic', fontWeight: '500' }}>
