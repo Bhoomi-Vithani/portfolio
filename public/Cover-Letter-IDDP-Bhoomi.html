@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhoomi Vithani - IDDP Application</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F2C94C;
+            /* Commerzbank yellow-ish inspiration */
+            --commerz-yellow: #fdbb00;
+            --brand-dark: #002e3c;
+            /* Commerzbank dark blue */
+            --text-main: #333333;
+            --text-light: #555555;
+            --bg-color: #f9fafc;
+            --white: #ffffff;
+            --accent: #00768c;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* A4 Page Setup for PDF Printing */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: var(--white);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border-radius: 4px;
+        }
+
+        /* Header Pattern */
+        .header {
+            background: var(--brand-dark);
+            color: var(--white);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--commerz-yellow) 0%, transparent 70%);
+            opacity: 0.15;
+            transform: translate(30%, -30%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .title-area h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .title-area h1 span {
+            color: var(--commerz-yellow);
+        }
+
+        .title-area h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .contact-area {
+            text-align: right;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            background-image: radial-gradient(var(--commerz-yellow) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: -19px -19px;
+            background-repeat: repeat;
+        }
+
+        .content>* {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+        }
+
+        .hook {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--brand-dark);
+            border-left: 4px solid var(--commerz-yellow);
+            padding: 15px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            margin-bottom: 10px;
+        }
+
+        .closing-hook {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--brand-dark);
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.6;
+            text-wrap: pretty;
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            padding: 0 10px;
+        }
+
+        /* Value Grid */
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 10px;
+            background: transparent !important;
+        }
+
+        .value-card:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        .value-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-color: var(--commerz-yellow);
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--brand-dark);
+            transition: var(--transition);
+        }
+
+        .value-card:hover::before {
+            background: var(--commerz-yellow);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--brand-dark);
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-light);
+        }
+
+        /* Closing */
+        .closing {
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .signature {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--brand-dark);
+            font-size: 1.2rem;
+        }
+
+        .btn-download {
+            background: var(--brand-dark);
+            color: var(--commerz-yellow);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-download:hover {
+            background: var(--commerz-yellow);
+            color: var(--brand-dark);
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+                display: block;
+                height: auto;
+                min-height: auto;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .page {
+                box-shadow: none;
+                width: 100%;
+                height: auto;
+                min-height: auto;
+                margin: 0;
+                border-radius: 0;
+                display: block;
+                overflow: visible;
+                page-break-after: auto;
+                page-break-inside: auto;
+            }
+
+            .header {
+                padding: 30px 40px;
+            }
+
+            .content {
+                display: block;
+                padding: 30px 40px;
+                background-image: none !important;
+            }
+
+            .value-grid {
+                gap: 15px;
+            }
+
+            .value-card {
+                padding: 15px 20px;
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .btn-download {
+                display: none;
+            }
+
+            .closing {
+                padding-top: 15px;
+                margin-top: 15px;
+            }
+
+            /* Ensure text sizes fit A4 */
+            .title-area h1 {
+                font-size: 2.5rem;
+            }
+
+            .title-area h2 {
+                font-size: 1.1rem;
+            }
+
+            .intro-text p {
+                font-size: 0.95rem;
+            }
+
+            .card-title {
+                font-size: 1.05rem;
+            }
+
+            .card-text {
+                font-size: 0.85rem;
+            }
+
+            .hook {
+                font-size: 1.2rem;
+                padding: 10px 15px;
+                margin-bottom: 5px;
+            }
+
+            .card-icon {
+                margin-bottom: 8px;
+                font-size: 1.5rem;
+            }
+
+            .closing-hook {
+                font-size: 0.95rem;
+                padding: 10px 15px;
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page" id="printableArea">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="title-area">
+                    <h1>Bhoomi <span>Vithani</span></h1>
+                    <h2>Architecting Digital Transformation</h2>
+                </div>
+                <div class="contact-area">
+                    bhoomivithani1008@gmail.com<br>
+                    +49 157 300 433 86<br>
+                    Frankfurt, Germany<br>
+                    linkedin.com/in/bhoomi-vithani
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <div class="hook">
+                "Don't bore us with a one-page ChatGPT letter. Surprise us."<br>
+                <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-light);">Challenge accepted, Johann
+                    and Roshell.</span>
+            </div>
+
+            <div class="intro-text">
+                <p>
+                    Rather than submitting another conventional letter summarizing my CV, I designed this structured
+                    digital application to reflect
+                    how I think and work: systematic, execution-focused, and built to scale.
+                </p>
+                <div style="margin-top: 20px; margin-bottom: 25px; line-height: 1.6;">
+                    This is not a replacement for substance. It is an extension of it.
+                </div>
+
+                <p style="font-weight: 600; color: var(--brand-dark);">
+                    I invite you to explore it here: <a href="https://bhoomi-vithani.github.io/portfolio/"
+                        target="_blank"
+                        style="color: var(--accent); font-weight: 500; text-decoration: none; margin-left: 5px;">https://bhoomi-vithani.github.io/portfolio/</a>
+                </p>
+
+                <div style="margin: 20px 0; text-align: center;">
+                    <a href="https://bhoomi-vithani.github.io/portfolio/" target="_blank"
+                        style="display: inline-block; text-decoration: none; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--commerz-yellow); transition: transform 0.3s ease;">
+                        <img src="./portfolio-app/public/hero-screenshot.png" alt="Portfolio Hero Section"
+                            style="max-width: 100%; height: auto; display: block;"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/002e3c/fdbb00?text=View+Digital+Portfolio';">
+                    </a>
+                    <div class="closing-hook" style="text-align: left;">
+                        I am already contributing to Commerzbank’s operations.
+                        <br>
+                        Through the IDDP, I am ready to contribute to its long-term digital&nbsp;development.
+                        <div style="font-size: 1rem; color: var(--text-light); margin-top: 15px; font-weight: 400;">
+                            I look forward to the opportunity to continue this conversation.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Closing Section -->
+            <div class="closing">
+                <div>
+                    <div class="signature">Bhoomi Vithani</div>
+                    <div style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">M.Sc. Management |
+                        Digital Business, Technology & Operations</div>
+                </div>
+
+                <button class="btn-download"
+                    onclick="window.open('https://www.linkedin.com/in/bhoomi-vithani', '_blank')"
+                    style="background: #0077b5; border-color: #0077b5;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                    LinkedIn
+                </button>
+
+                <!-- <button class="btn-download" onclick="window.print()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Save as PDF
+                </button> -->
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Simple JS to add dynamic hover effects tracking mouse position on cards for a more "alive" feel
+        document.querySelectorAll('.value-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                // Add a subtle radial gradient highlight following the cursor
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(253, 187, 0, 0.05) 0%, rgba(255,255,255,1) 50%)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.background = 'var(--white)';
+            });
+        });
+    </script>
+</body>
+
+</html>
