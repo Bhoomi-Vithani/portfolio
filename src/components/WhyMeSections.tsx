@@ -182,7 +182,7 @@ const WhyMeSections = () => {
                     <div className="culture-fit-box">
                         <h2 className="culture-fit-headline">The Yellow Heart</h2>
                         <p className="culture-fit-text">
-                            What attracts me to Team Yellow is ambition paired with responsibility. The Yellow Heart represents conviction combined with accountability.
+                            What attracts me to Team Yellow is its ambition paired with responsibility , a culture where initiative is expected and ownership is real. The Yellow Heart represents conviction combined with accountability.
                         </p>
                         <p className="culture-fit-text" style={{ marginTop: '24px', fontWeight: '500' }}>
                             I am ready to contribute where structure and innovation intersect, and to help build what scales.
